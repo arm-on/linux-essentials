@@ -186,3 +186,5 @@
 | aws s3 cp /path/to/a/file.txt s3://[bucket-name]/path/to/file.txt --endpoint-url https://[bucket-name].parspack.net | copy a file to a bucket |
 | aws s3 cp /path/to/a/folder s3://[bucket-name]/ --recursive --endpoint-url https://[bucket-name].parspack.net | copy a folder to a bucket |
 | aws s3 ls s3://[bucket-name]/path/to/a/folder/ -endpoint-url https://[bucket-name].parspack.net | list the contents of a folder |
+|__ANACONDA__|
+| source ~/anaconda3/bin/activate | activate the Anaconda's environment |
