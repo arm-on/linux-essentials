@@ -17,7 +17,7 @@
 | info echo | more information about the "echo" command (Note: More complete than "man" and "help" commands) |
 | whatis ls | what is "ls"? (a very short answer to this) |
 |__Audio/Video__|
-| ffmpeg -i whatever.webm -c copy whatever.mp4 | convert webm file to mp4 |
+| ffmpeg -i whatever.webm -c copy -strict experimental whatever.mp4 | convert webm file to mp4 (Note: "-strict experimental" was added due to the outdated ffmpeg package) |
 |__Working with Files__|
 |cd /the/path/of/a/folder/ | change directory |
 | cd ~ | change directory to the home dir |
