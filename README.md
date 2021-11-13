@@ -160,6 +160,8 @@
 | sudo userdel arman | delete the user `arman`, but keep his/her profile - Note: the path `/home/arman/` will remain. |
 | sudo userdel -r arman | delete the user `arman` and his/her profile (files) |
 | sudo groupdel mygroup | delete a group named `mygroup` |
+| usermod -aG sudo arman | add user `arman` to the sudo group |
+| sudo deluser arman sudo | revoke sudo access from `arman` |
 |__PERMISSIONS__|
 | ls -l | The first character: "d" means directory, and "-" means file</br>The three characters after that: "r" = read, "w" = write, "x" = execute. If instead of any of them, a "-" is written, means that we cannot "read", "write" or "execute" that file. </br> The first three characters correspond to the permissions of the owner of the file</br>The second three characters correspond to the group members of the owner </br>The last three characters correspond to other users (any kind of user) </br>The "execute" permission for directories means changing directory to those dirs (using the `cd` command) |
 | About the numbers of the characters mentioned above | "r" (read) = 4, "w" (write) = 2, "x" (execute) = 1 - Note that the sum of them is 7.</br>So, 777 means that anyone can do anything with that file/directory |
