@@ -1,9 +1,8 @@
 # Linux Essentials
-
+## General
 | | |
 |-|-|
 |__command__|__what it does__|
-|__General__|
 | clear | clear the terminal | 
 | history | list all of the commands we executed |
 | du -hs /path/to/a/directory/ | see the volume of a directory |
@@ -11,14 +10,20 @@
 | nvtop | see the status of the NVIDIA GPU |
 | htop | see the status of the CPUs and RAM |
 | pwd | show the current directory that the commands are being executed in |
-|__HELP__|
+## Help
+| | |
+|-|-|
 | ls --help | documentation of the "ls" command |
 | man echo | manual of the "echo" command |
 | info echo | more information about the "echo" command (Note: More complete than "man" and "help" commands) |
 | whatis ls | what is "ls"? (a very short answer to this) |
-|__Audio/Video__|
+## Audio/Video
+| | |
+|-|-|
 | ffmpeg -i whatever.webm -c copy -strict experimental whatever.mp4 | convert webm file to mp4 (Note: "-strict experimental" was added due to the outdated ffmpeg package) |
-|__Working with Files__|
+## Working with Files
+| | |
+|-|-|
 |cd /the/path/of/a/folder/ | change directory |
 | cd ~ | change directory to the home dir |
 | cd / | change directory to the root dir |
@@ -51,7 +56,9 @@
 | mv a.txt b.txt | rename "a.txt" to "b.txt" |
 | whereis ls | show the directory in which the "ls" library exists |
 | less a.txt | read the contents of a text file one page(one screen) at a time. |
-|__Compression__|
+## Compression
+| | |
+|-|-|
 | zip media.zip porteqal.mp4 sound.mp3 linux.png | make a zip file containing the tree files "porteqal.mp4", "sound.mp3", and "linux.png". Name the file "media.zip" |
 | unzip media.zip | decompress the file "media.zip", and move its contents to the current directory |
 | zip linux.zip /path/to/a/directory/ | make a compressed file containing a directory itself (without the files it contains!!!) |
@@ -68,7 +75,9 @@
 | tar -cvjf media.bz2 sound.mp3 porteqal.mp4 | compress some files directly to a tar bzip file (instead of first compressing as "tar", and then "bzip") |
 | tar -xvzf media.tgz  | Decompress the .tgz file directly into the original files |
 | tar -xvjf media.bz2 | Decompress the .bz2 file directly into the original files |
-|__Search for Information / Information Extraction from Files__|
+## Search for Information / Information Extraction from Files
+| | |
+|-|-|
 | less myfile.txt | displays the content of a file "page by page" with scrolling option |
 | head myfile.txt | Displays the first 10 lines of a file |
 | tail myfile.txt | Displays the last 10 lines of a file |
@@ -95,19 +104,25 @@
 | cut -d" " -f3-6 myfile.txt > output.txt | Split the contents of a file using the space character, consider each part as a "field", and display the content of the third field up to the sixth field. Finally, write the output into the file "output.txt"  |
 | cut -d" " -f3-6 myfile.txt >> output.txt | Split the contents of a file using the space character, consider each part as a "field", and display the content of the third field up to the sixth field. Finally, append the output to the content of the file "output.txt"  |
 | wc myfile.txt | Display the number of lines that the file contains, then the number of words (tokens separated by space), and the number of characters |
-|__REGEX__|
+## REGEX
+| | |
+|-|-|
 | grep ^arman myfile.txt | Search for the lines starting with "arman" inside "myfile.txt", and show the results (as a list) |
 | grep arman$ myfile.txt | Search for the lines ending with "arman" inside "myfile.txt", and show the results (as a list) |
 | grep a.m myfile.txt | Search for the lines starting with "a", having "m" as their third character, (don't care about the second character) inside "myfile.txt", and show the results (as a list) | 
 | grep a..m myfile.txt | Search for the lines starting with "a", having "m" as their fourth character, (don't care about the second and third characters) inside "myfile.txt", and show the results (as a list) | 
 | grep ^....$ myfile.txt | Search for the lines having only 4 characters inside "myfile.txt", and show the results (as a list) | 
-|__PIPE__|
+## Pipe
+| | |
+|-|-|
 | command1 \| command2 | run the first command, and take its output to the second command as its input |
 | ls \| grep ^D |/ list the files of the current directory, but only show the results starting with the "D" character |
 | ls \| grep s$ | list the files of the current directory, but only show the results ending with the "s" character   |
 | find . type f \| grep python | find the files in the system named "python" |
 | cut -d" " -f3 myfile.txt \| cut -c2 |display the second character of the third token from each row |
-|__BASH__|
+## Bash
+| | |
+|-|-|
 | ls sh | get the path to the interpreter of the bash language |
 | #!/bin/bash </br> your bash code goes here | how to write a shell script with bash |
 | #! /etc/bash</br> echo "please write your name" </br> if [[ "$1" == "arman" ]]; </br> then </br>&nbsp;&nbsp;&nbsp;&nbsp;echo "yes" </br>else </br>&nbsp;&nbsp;&nbsp;&nbsp; echo "no" </br>fi | a demo bash script using the conditional statement "if" |
@@ -116,13 +131,17 @@
 | bash ./myscript.sh arman | run my shell script named "myscript.sh" taking "arman" as input |
 | #! /etc/bash</br>for i in {1..10}</br>do</br>&nbsp;&nbsp;&nbsp;&nbsp;echo $i</br>done | print the numbers 1 to 10 |
 | #! /etc/bash</br>for (( i=1 ; i <= 50 ; i++ ))</br>do</br>&nbsp;&nbsp;&nbsp;&nbsp; echo "number : $i$"</br>done</br>echo "done" | write the numbers from 1 to 50 with a "number : " string on the left side of them |
-|__MAIN DIRECTORIES IN LINUX__|
+## Main Directories in Linux
+| | |
+|-|-|
 | etc | all of the linux tools are here, including bluetooth, apache, python, and everything you can install on it. So, if you wanna configure sth, here is the place to look for the .conf file |
 | bin | contains the code for all of the commands such as "ls" |
 | lib | contains the libraries |
 | /var/log | the logs in linux are here |
 | dmsg | show the logs in a beautiful way (for instance, if you connect a usb, this will show sth) |
-|__PROCESSES__|
+## Processes
+| | |
+|-|-|
 | ps | list the processes that are running |
 | ps -aux | show the list of the processes being run by any user, along with the process IDs (PIDs) (Note: aux stands for all user execute) |
 | kill 5577 | kill the process with ID 5577 |
@@ -130,7 +149,9 @@
 | free | show the ram (memory), how much of it is used, how much is free, and the same things for the swap (which is used to accelerate the speed of the system) |
 | free -tb | show the ram (memory), how much (how many bytes) of it is used, how much is free, and the same things for the swap (which is used to accelerate the speed of the system) |
 | free -tm | show the ram (memory), how much (how many megabytes) of it is used, how much is free, and the same things for the swap (which is used to accelerate the speed of the system) |
-|__NETWORKING__|
+## Networking
+| | |
+|-|-|
 | /etc/resolv.conf | the file containing the configure of the DNS </br>It may contain sth like this:</br>`nameserver 127.0.0.25`</br>`options edns0`</br>`search localdomain` </br> To add another DNS (like the DNS server of the google which is 8.8.8.8), append the following line:</br>nameserver 8.8.8.8 |
 | ifconfig | shows some information about the conifiguration of the network (such as the MAC address), the networking cards, ...  (Note: "if" stands for "interface") |
 | ifconfig -a | show the network cards including the disabled ones |
@@ -139,7 +160,9 @@
 | sudo ifconfig eth0 up | enable the network card "eth0" |
 | dig arman.ir | reveal some information about the website "arman.ir" including the IP addresses it has - Actually, this command sends a request to the nameservers of the website |
 | ping 192.168.200.567 | send requests to the given ip address to see if we can have a connection with the device (pc) having that ip address - Note: in the result of this command, you will see "TTL". If the value of "ttl" is more than 100, the pc has a windows installed on it. Otherwise, the OS is linux. - Note2: You are not required to write an ip address. Instead, you can write a domain, such as `ping arman.ir` - Note3: This command is used to see if the connection between two clients or a client and a server has been established |
-|__USERS__|
+## Users
+| | |
+|-|-|
 | who | shows the current user, with a little bit of extra info |
 | w | shows which users are logged in, the time of their login, and what they are doing |
 | whoami | shows the current user's name |
@@ -162,7 +185,9 @@
 | sudo groupdel mygroup | delete a group named `mygroup` |
 | usermod -aG sudo arman | add user `arman` to the sudo group |
 | sudo deluser arman sudo | revoke sudo access from `arman` |
-|__PERMISSIONS__|
+## Permissions
+| | |
+|-|-|
 | ls -l | The first character: "d" means directory, and "-" means file</br>The three characters after that: "r" = read, "w" = write, "x" = execute. If instead of any of them, a "-" is written, means that we cannot "read", "write" or "execute" that file. </br> The first three characters correspond to the permissions of the owner of the file</br>The second three characters correspond to the group members of the owner </br>The last three characters correspond to other users (any kind of user) </br>The "execute" permission for directories means changing directory to those dirs (using the `cd` command) |
 | About the numbers of the characters mentioned above | "r" (read) = 4, "w" (write) = 2, "x" (execute) = 1 - Note that the sum of them is 7.</br>So, 777 means that anyone can do anything with that file/directory |
 | sudo chmod u  | give the permission of ... to the user named `` |
@@ -179,16 +204,26 @@
 | sudo chown arman myfile.txt | change the owner of the file "myfile.txt" to the user "arman" |
 | sudo chgrp mygroup myfile.txt | change the group of the file "myfile.txt" to the group "mygroup" |
 | sudo chown arman myfolder -R | change the owner of the directory named "myfolder" to the user "arman", along with all of its subfolders and files inside it |
-|__SYMBOLIC LINKS (EQUIVALENT OF SHORTCUTS IN WINDOWS)__|
+## SYMBOLIC LINKS (EQUIVALENT OF SHORTCUTS IN WINDOWS)
+| | |
+|-|-|
 | ln -s /path/to/the/original/file.txt myshortcut.txt | create a shortcut of the file which is located at `/path/to/the/original/file.txt` in the current directory, and name it as `myshortcut.txt` |
-|__STICKY BIT__|
+## Sticky Bit
+| | |
+|-|-|
 | sudo chmod o+t myfolder/ | every user can only change the files that he/she owns |
 | sudo chmod 777 myfolder | remove the sticky bit mode |
-|__AWS__|
+## AWS
+| | |
+|-|-|
 | aws s3 cp /path/to/a/file.txt s3://[bucket-name]/path/to/file.txt --endpoint-url https://[bucket-name].parspack.net | copy a file to a bucket |
 | aws s3 cp /path/to/a/folder s3://[bucket-name]/ --recursive --endpoint-url https://[bucket-name].parspack.net | copy a folder to a bucket |
 | aws s3 ls s3://[bucket-name]/path/to/a/folder/ -endpoint-url https://[bucket-name].parspack.net | list the contents of a folder |
-|__ANACONDA__|
+## Anaconda
+| | |
+|-|-|
 | source ~/anaconda3/bin/activate | activate the Anaconda's environment |
-|__GPU__|
+## GPU
+| | |
+|-|-|
 | Installing CUDA 11.2 and cuDNN 8.1 | [Unofficial Link](https://medium.com/analytics-vidhya/install-cuda-11-2-cudnn-8-1-0-and-python-3-9-on-rtx3090-for-deep-learning-fcf96c95f7a1) - [NVIDIA Link for cuDNN Installation](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html) - [How to verify cuDNN Installation](https://stackoverflow.com/questions/31326015/how-to-verify-cudnn-installation/36978616) |
