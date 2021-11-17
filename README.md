@@ -10,6 +10,7 @@
 | nvtop | see the status of the NVIDIA GPU |
 | htop | see the status of the CPUs and RAM |
 | pwd | show the current directory that the commands are being executed in |
+| rm -rf ~/.local/share/Trash/* | Empty the trash |
 ## Help
 | | |
 |-|-|
