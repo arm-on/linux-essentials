@@ -236,3 +236,7 @@
 | screen -S arman | Start a screen with name `arman`. You can detach from the screen (get out of it) by using `ctrl+a` and then pressing `d` |
 | screen -r arman | Resume a screen named `arman` |
 | screen killall | Kill all screens |
+## Server
+| | |
+|-|-|
+| apt install ubuntu-desktop | install a desktop on an Ubuntu server |
