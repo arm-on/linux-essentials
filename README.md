@@ -23,6 +23,7 @@ Table of contents:<br>
 - [Screen](#screen-do-something-while-im-gone)
 - [Server](#server)
 ## General
+[Back to top](#)
 | | |
 |-|-|
 |__command__|__what it does__|
@@ -37,6 +38,7 @@ Table of contents:<br>
 | lsof / \| grep deleted | List the files that should have been deleted, but are not deleted until now! |
 | lsof\|grep deleted\|awk '{print $2}'\|xargs kill -9 | Get rid of the deleted files for which a job/process is still open, preventing the file from being deleted |
 ## Help
+[Back to top](#)
 | | |
 |-|-|
 | ls --help | documentation of the "ls" command |
@@ -44,10 +46,12 @@ Table of contents:<br>
 | info echo | more information about the "echo" command (Note: More complete than "man" and "help" commands) |
 | whatis ls | what is "ls"? (a very short answer to this) |
 ## Audio/Video
+[Back to top](#)
 | | |
 |-|-|
 | ffmpeg -i whatever.webm -c copy -strict experimental whatever.mp4 | convert webm file to mp4 (Note: "-strict experimental" was added due to the outdated ffmpeg package) |
 ## Working with Files
+[Back to top](#)
 | | |
 |-|-|
 |cd /the/path/of/a/folder/ | change directory |
@@ -83,6 +87,7 @@ Table of contents:<br>
 | whereis ls | show the directory in which the "ls" library exists |
 | less a.txt | read the contents of a text file one page(one screen) at a time. |
 ## Compression
+[Back to top](#)
 | | |
 |-|-|
 | zip media.zip porteqal.mp4 sound.mp3 linux.png | make a zip file containing the tree files "porteqal.mp4", "sound.mp3", and "linux.png". Name the file "media.zip" |
@@ -102,6 +107,7 @@ Table of contents:<br>
 | tar -xvzf media.tgz  | Decompress the .tgz file directly into the original files |
 | tar -xvjf media.bz2 | Decompress the .bz2 file directly into the original files |
 ## Search for Information / Information Extraction from Files
+[Back to top](#)
 | | |
 |-|-|
 | less myfile.txt | displays the content of a file "page by page" with scrolling option |
@@ -131,6 +137,7 @@ Table of contents:<br>
 | cut -d" " -f3-6 myfile.txt >> output.txt | Split the contents of a file using the space character, consider each part as a "field", and display the content of the third field up to the sixth field. Finally, append the output to the content of the file "output.txt"  |
 | wc myfile.txt | Display the number of lines that the file contains, then the number of words (tokens separated by space), and the number of characters |
 ## REGEX
+[Back to top](#)
 | | |
 |-|-|
 | grep ^arman myfile.txt | Search for the lines starting with "arman" inside "myfile.txt", and show the results (as a list) |
@@ -139,6 +146,7 @@ Table of contents:<br>
 | grep a..m myfile.txt | Search for the lines starting with "a", having "m" as their fourth character, (don't care about the second and third characters) inside "myfile.txt", and show the results (as a list) | 
 | grep ^....$ myfile.txt | Search for the lines having only 4 characters inside "myfile.txt", and show the results (as a list) | 
 ## Pipe
+[Back to top](#)
 | | |
 |-|-|
 | command1 \| command2 | run the first command, and take its output to the second command as its input |
@@ -147,6 +155,7 @@ Table of contents:<br>
 | find . type f \| grep python | find the files in the system named "python" |
 | cut -d" " -f3 myfile.txt \| cut -c2 |display the second character of the third token from each row |
 ## Bash
+[Back to top](#)
 | | |
 |-|-|
 | ls sh | get the path to the interpreter of the bash language |
@@ -158,6 +167,7 @@ Table of contents:<br>
 | #! /etc/bash</br>for i in {1..10}</br>do</br>&nbsp;&nbsp;&nbsp;&nbsp;echo $i</br>done | print the numbers 1 to 10 |
 | #! /etc/bash</br>for (( i=1 ; i <= 50 ; i++ ))</br>do</br>&nbsp;&nbsp;&nbsp;&nbsp; echo "number : $i$"</br>done</br>echo "done" | write the numbers from 1 to 50 with a "number : " string on the left side of them |
 ## Main Directories in Linux
+[Back to top](#)
 | | |
 |-|-|
 | etc | all of the linux tools are here, including bluetooth, apache, python, and everything you can install on it. So, if you wanna configure sth, here is the place to look for the .conf file |
@@ -166,6 +176,7 @@ Table of contents:<br>
 | /var/log | the logs in linux are here |
 | dmsg | show the logs in a beautiful way (for instance, if you connect a usb, this will show sth) |
 ## Processes
+[Back to top](#)
 | | |
 |-|-|
 | ps | list the processes that are running |
@@ -176,6 +187,7 @@ Table of contents:<br>
 | free -tb | show the ram (memory), how much (how many bytes) of it is used, how much is free, and the same things for the swap (which is used to accelerate the speed of the system) |
 | free -tm | show the ram (memory), how much (how many megabytes) of it is used, how much is free, and the same things for the swap (which is used to accelerate the speed of the system) |
 ## Networking
+[Back to top](#)
 | | |
 |-|-|
 | /etc/resolv.conf | the file containing the configure of the DNS </br>It may contain sth like this:</br>`nameserver 127.0.0.25`</br>`options edns0`</br>`search localdomain` </br> To add another DNS (like the DNS server of the google which is 8.8.8.8), append the following line:</br>nameserver 8.8.8.8 |
@@ -187,6 +199,7 @@ Table of contents:<br>
 | dig arman.ir | reveal some information about the website "arman.ir" including the IP addresses it has - Actually, this command sends a request to the nameservers of the website |
 | ping 192.168.200.567 | send requests to the given ip address to see if we can have a connection with the device (pc) having that ip address - Note: in the result of this command, you will see "TTL". If the value of "ttl" is more than 100, the pc has a windows installed on it. Otherwise, the OS is linux. - Note2: You are not required to write an ip address. Instead, you can write a domain, such as `ping arman.ir` - Note3: This command is used to see if the connection between two clients or a client and a server has been established |
 ## Users
+[Back to top](#)
 | | |
 |-|-|
 | who | shows the current user, with a little bit of extra info |
@@ -212,6 +225,7 @@ Table of contents:<br>
 | usermod -aG sudo arman | add user `arman` to the sudo group |
 | sudo deluser arman sudo | revoke sudo access from `arman` |
 ## Permissions
+[Back to top](#)
 | | |
 |-|-|
 | ls -l | The first character: "d" means directory, and "-" means file</br>The three characters after that: "r" = read, "w" = write, "x" = execute. If instead of any of them, a "-" is written, means that we cannot "read", "write" or "execute" that file. </br> The first three characters correspond to the permissions of the owner of the file</br>The second three characters correspond to the group members of the owner </br>The last three characters correspond to other users (any kind of user) </br>The "execute" permission for directories means changing directory to those dirs (using the `cd` command) |
@@ -231,36 +245,43 @@ Table of contents:<br>
 | sudo chgrp mygroup myfile.txt | change the group of the file "myfile.txt" to the group "mygroup" |
 | sudo chown arman myfolder -R | change the owner of the directory named "myfolder" to the user "arman", along with all of its subfolders and files inside it |
 ## SYMBOLIC LINKS (EQUIVALENT OF SHORTCUTS IN WINDOWS)
+[Back to top](#)
 | | |
 |-|-|
 | ln -s /path/to/the/original/file.txt myshortcut.txt | create a shortcut of the file which is located at `/path/to/the/original/file.txt` in the current directory, and name it as `myshortcut.txt` |
 ## Sticky Bit
+[Back to top](#)
 | | |
 |-|-|
 | sudo chmod o+t myfolder/ | every user can only change the files that he/she owns |
 | sudo chmod 777 myfolder | remove the sticky bit mode |
 ## AWS
+[Back to top](#)
 | | |
 |-|-|
 | aws s3 cp /path/to/a/file.txt s3://[bucket-name]/path/to/file.txt --endpoint-url https://[bucket-name].parspack.net | copy a file to a bucket |
 | aws s3 cp /path/to/a/folder s3://[bucket-name]/ --recursive --endpoint-url https://[bucket-name].parspack.net | copy a folder to a bucket |
 | aws s3 ls s3://[bucket-name]/path/to/a/folder/ -endpoint-url https://[bucket-name].parspack.net | list the contents of a folder |
 ## Anaconda
+[Back to top](#)
 | | |
 |-|-|
 | source ~/anaconda3/bin/activate | activate the Anaconda's environment |
 | make a new environment which uses a specific Python version | conda create --name your_desired_name python=3.8 |
 ## GPU
+[Back to top](#)
 | | |
 |-|-|
 | Installing CUDA 11.2 and cuDNN 8.1 | [Unofficial Link](https://medium.com/analytics-vidhya/install-cuda-11-2-cudnn-8-1-0-and-python-3-9-on-rtx3090-for-deep-learning-fcf96c95f7a1) - [NVIDIA Link for cuDNN Installation](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html) - [How to verify cuDNN Installation](https://stackoverflow.com/questions/31326015/how-to-verify-cudnn-installation/36978616) |
 ## Screen (Do Something while I'm gone)
+[Back to top](#)
 | | |
 |-|-|
 | screen -S arman | Start a screen with name `arman`. You can detach from the screen (get out of it) by using `ctrl+a` and then pressing `d` |
 | screen -r arman | Resume a screen named `arman` |
 | screen killall | Kill all screens |
 ## Server
+[Back to top](#)
 | | |
 |-|-|
 | apt install ubuntu-desktop | install a desktop on an Ubuntu server |
