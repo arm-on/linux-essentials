@@ -226,6 +226,7 @@
 | | |
 |-|-|
 | source ~/anaconda3/bin/activate | activate the Anaconda's environment |
+| make a new environment which uses a specific Python version | conda create --name your_desired_name python=3.8 |
 ## GPU
 | | |
 |-|-|
