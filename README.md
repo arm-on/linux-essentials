@@ -1,4 +1,27 @@
 # Linux Essentials
+
+Table of contents:<br>
+- [General](#general)
+-  [Help](#help)
+- [Audio/Video](#audiovideo)
+- [Files](#working-with-files)
+- [Compression](#compression)
+- [Search for Information/Information Extraction from Files](#search-for-information--information-extraction-from-files)
+- [Regex](#regex)
+- [Pipe](#pipe)
+- [Bash](#bash)
+- [Main Directories in Linux](#main-directories-in-linux)
+- [Processes](#processes)
+- [Networking](#networking)
+- [Users](#users)
+- [Permissions](#permissions)
+- [Symbolic Links](#symbolic-links-equivalent-of-shortcuts-in-windows)
+- [Sticky Bit](#sticky-bit)
+- [AWS](#aws)
+- [Anaconda](#anaconda)
+- [GPU](#gpu)
+- [Screen](#screen-do-something-while-im-gone)
+- [Server](#server)
 ## General
 | | |
 |-|-|
