@@ -268,6 +268,20 @@ Table of contents:<br>
 |-|-|
 | source ~/anaconda3/bin/activate | activate the Anaconda's environment |
 | make a new environment which uses a specific Python version | conda create --name your_desired_name python=3.8 |
+
+Note: To install Anaconda for all linux users, do the following steps:
+1. Download Anaconda .sh installation file from its website.
+2. Run `sudo -i` to be the root user.
+3. Run `sudo apt-get update`
+4. Execute `bash Anaconda[...].sh` to run the installation file.
+5. Accept the license (type yes)
+6. For the install location, choose `opt/anaconda3`
+7. It asks "Do you wish the installer to initialize blah blah blah"? Say "yes". (The installation is finished).
+8. Run `exit` to again be a normal user.
+9. Now your user does not recognize conda (For instance if you type `conda -V`, it will say `command not found`).
+10. Run `sudo nano /etc/environment`.
+11. At the beginning of the `PATH` variable, after the `"` character, add `/opt/anaconda3/bin:`, and save the file using `CTRL+O`.
+12. Log out from your own user and do the SSH again. Now if you run `conda -V`, the user will recognize it.
 ## GPU
 [Back to top](#)
 | | |
