@@ -287,6 +287,51 @@ Note: To install Anaconda for all linux users, do the following steps:
 | | |
 |-|-|
 | Installing CUDA 11.2 and cuDNN 8.1 | [Unofficial Link](https://medium.com/analytics-vidhya/install-cuda-11-2-cudnn-8-1-0-and-python-3-9-on-rtx3090-for-deep-learning-fcf96c95f7a1) - [NVIDIA Link for cuDNN Installation](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html) - [How to verify cuDNN Installation](https://stackoverflow.com/questions/31326015/how-to-verify-cudnn-installation/36978616) |
+
+### How to Install Conda
+- `sudo apt-get update`
+- `sudo apt-get install -y build-essential cmake unzip pkg-config`
+- `sudo apt-get install -y libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev`
+- `sudo apt-get install -y libjpeg-dev libpng-dev libtiff-dev`
+- `sudo apt-get install -y libavcodec-dev libavformat-dev libswscale-dev libv4l-dev`
+- `sudo apt-get install -y libxvidcore-dev libx264-dev`
+- `sudo apt-get install -y libgtk-3-dev`
+- `sudo apt-get install -y libopenblas-dev libatlas-base-dev liblapack-dev gfortran`
+- `sudo apt-get install -y libhdf5-serial-dev graphviz`
+- `sudo apt-get install -y python3-dev python3-tk python-imaging-tk`
+- `sudo apt-get install -y linux-image-generic linux-image-extra-virtual`
+- `sudo apt-get install -y linux-source linux-headers-generic`
+- `sudo apt-get purge nvidia*` (remove any nvidia drivers already installed)
+- `sudo add-apt-repository ppa:graphics-drivers/ppa` (add graphic drivers ppa)
+- `sudo apt-get update`
+- `ubuntu-drivers devices` (search for available drivers). The output will be something like this:
+```
+== /sys/devices/pci0000:00/0000:00:03.0/0000:03:00.0 ==
+
+vendor   : NVIDIA Corporation
+
+model    : GM200 [GeForce GTX TITAN X]
+
+modalias : pci:v000010DEd000017C2sv000010DEsd00001132bc03sc00i00
+
+driver   : nvidia-415 - third-party free
+
+driver   : nvidia-430 - third-party free recommended
+
+driver   : nvidia-418 - third-party free
+
+driver   : nvidia-410 - third-party free
+
+driver   : nvidia-384 - distro non-free
+
+driver   : xserver-xorg-video-nouveau - distro free builtin
+```
+- `sudo apt-get install nvidia-driver-430` (install the driver with the best version). The result was `unable to locate package`. Run `sudo apt-get install nvidia-430` instead, and it will work!
+- `sudo reboot` (before the reboot, `nvidia-smi` won't work. It will say something other than `command not found` which means a driver is there, but it will not work)
+- To install tensorflow for a conda env: First activate it, and then run `conda install -c anaconda tensorflow-gpu` (install `tensorflow-gpu`) (while installing this, cuda-toolkit and cudnn will also be installed)
+- `apt install nvidia-cuda-toolkit` (run as root and the base conda env)
+- Run `nvcc -V` to get the version of the cuDNN! (Now it should work!)
+
 ## Screen (Do Something while I'm gone)
 [Back to top](#)
 | | |
