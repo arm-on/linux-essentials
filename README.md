@@ -227,9 +227,11 @@ network:
 ```
 In the above lines, `eth0` is the name of your interface, `192.168.121.199/24‍‍‍` is the static ip address. If you want multiple addresses, type another line for the other address.
 
-3. Apply the new network plan by running `sudo netplan apply`.
+3. Test the connection to the network (if you want to) using `sudo netplan try`.
 
-4. Verify the changes by running `ip addr show dev eno1`. Remember that `eno1` was the name of our interface. The output will be something like this:
+4. Apply the new network plan by running `sudo netplan apply`.
+
+5. Verify the changes by running `ip addr show dev eno1`. Remember that `eno1` was the name of our interface. The output will be something like this:
 ```
 3: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
     link/ether 56:00:00:60:20:0a brd ff:ff:ff:ff:ff:ff
