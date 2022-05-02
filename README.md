@@ -198,6 +198,61 @@ Table of contents:<br>
 | sudo ifconfig eth0 up | enable the network card "eth0" |
 | dig arman.ir | reveal some information about the website "arman.ir" including the IP addresses it has - Actually, this command sends a request to the nameservers of the website |
 | ping 192.168.200.567 | send requests to the given ip address to see if we can have a connection with the device (pc) having that ip address - Note: in the result of this command, you will see "TTL". If the value of "ttl" is more than 100, the pc has a windows installed on it. Otherwise, the OS is linux. - Note2: You are not required to write an ip address. Instead, you can write a domain, such as `ping arman.ir` - Note3: This command is used to see if the connection between two clients or a client and a server has been established |
+
+### How to configure static ip address
+1. Identify the name of the ethernet interface using `ip link`. The output will be something like this:
+```
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 0c:c4:7a:cc:59:70 brd ff:ff:ff:ff:ff:ff
+3: eno2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether 0c:c4:7a:cc:59:71 brd ff:ff:ff:ff:ff:ff
+```
+Here the name is `eno1`. It can be `ens1`, `eth0` or sth like that in other cases.
+
+2. Go to the `/etc/netplan/` directory. There are some files with the `.yaml` postfix. Edit those files and make them like this:
+```
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth0:
+      dhcp4: no
+      addresses:
+        - 192.168.121.199/24
+      gateway4: 192.168.121.1
+      nameservers:
+          addresses: [8.8.8.8, 1.1.1.1]
+```
+In the above lines, `eth0` is the name of your interface, `192.168.121.199/24‍‍‍` is the static ip address. If you want multiple addresses, type another line for the other address.
+
+3. Apply the new network plan by running `sudo netplan apply`.
+
+4. Verify the changes by running `ip addr show dev eno1`. Remember that `eno1` was the name of our interface. The output will be something like this:
+```
+3: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 56:00:00:60:20:0a brd ff:ff:ff:ff:ff:ff
+    inet 192.168.121.199/24 brd 192.168.121.255 scope global dynamic eno1
+       valid_lft 3575sec preferred_lft 3575sec
+    inet6 fe80::5054:ff:feb0:f500/64 scope link 
+       valid_lft forever preferred_lft forever
+```
+
+---
+
+Note: For older Ubuntu versions (e.g., 16), there might be no `/etc/netplan/` directory. In this case, check for the `/etc/network/interfaces` file. It should look like this:
+```
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto eno1
+iface eno1 inet static
+ address 213.220.120.2 (ip address of the server)
+ netmask 255.255.255.0 (always the same)
+ gateway 213.220.180.1 (ask this from the server admin)
+ dns-nameservers 4.4.4.4 8.8.8.8 (always the same)
+```
+
+After doing this, restart the network service by running `sudo /etc/init.d/networking restart`.
 ## Users
 [Back to top](#)
 | | |
