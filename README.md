@@ -200,7 +200,7 @@ Table of contents:<br>
 | ping 192.168.200.567 | send requests to the given ip address to see if we can have a connection with the device (pc) having that ip address - Note: in the result of this command, you will see "TTL". If the value of "ttl" is more than 100, the pc has a windows installed on it. Otherwise, the OS is linux. - Note2: You are not required to write an ip address. Instead, you can write a domain, such as `ping arman.ir` - Note3: This command is used to see if the connection between two clients or a client and a server has been established |
 
 ### How to configure static ip address
-1. Identify the name of the ethernet interface using `ip link`. The output will be something like this:
+1. Identify the name of the ethernet interface using `ip link` (or `ip a`, `ip addr`). The output will be something like this:
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
