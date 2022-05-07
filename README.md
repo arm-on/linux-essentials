@@ -345,7 +345,7 @@ Note: To install Anaconda for all linux users, do the following steps:
 |-|-|
 | Installing CUDA 11.2 and cuDNN 8.1 | [Unofficial Link](https://medium.com/analytics-vidhya/install-cuda-11-2-cudnn-8-1-0-and-python-3-9-on-rtx3090-for-deep-learning-fcf96c95f7a1) - [NVIDIA Link for cuDNN Installation](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html) - [How to verify cuDNN Installation](https://stackoverflow.com/questions/31326015/how-to-verify-cudnn-installation/36978616) |
 
-### How to Install Conda
+### How to Install CUDA
 - `sudo apt-get update`
 - `sudo apt-get install -y build-essential cmake unzip pkg-config`
 - `sudo apt-get install -y libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev`
