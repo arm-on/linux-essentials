@@ -78,6 +78,7 @@ Table of contents:<br>
 | echo "salam" | print the word "salam" |
 | echo $a $b | print the content of the variable "a", then a space, and then the content of the variable "b" |
 | scp -r speaker* arman@120.233.50.2:~/wavfiles | Copy the folders whose name start with "speaker" from here to the server 120.233.50.2, while logging into that server with the username "arman" |
+| scp -r /Users/armanmalekzadeh/Documents/BERT-NEW/ user01@123.22.456.22:~/arman/BERT-Refactor/codes/training/bert-checkpoints/ | Copy the folders and files inside the "BERT-NEW" directory on my own laptop to the "bert-checkpoints" directory on a remote server |
 | cp test.txt /path/to/a/directory | copy the file "test.txt" to a directory |
 | cp -r * /path/to/a/directory/ | copy everything inside the current directory (including the folders) to another directory |
 | cp -r /first/dir/ /second/dir/ | copy the first directory into the second directory |
