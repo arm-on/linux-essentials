@@ -326,6 +326,7 @@ After doing this, restart the network service by running `sudo /etc/init.d/netwo
 |-|-|
 | source ~/anaconda3/bin/activate | activate the Anaconda's environment |
 | make a new environment which uses a specific Python version | conda create --name your_desired_name python=3.8 |
+| jupyter notebook --no-browser --port=8080 | Run a jupyter notebook on the server without using the browser on the port 8080 | 
 
 Note: To install Anaconda for all linux users, do the following steps:
 1. Download Anaconda .sh installation file from its website.
