@@ -325,7 +325,7 @@ After doing this, restart the network service by running `sudo /etc/init.d/netwo
 | | |
 |-|-|
 | source ~/anaconda3/bin/activate | activate the Anaconda's environment |
-| make a new environment which uses a specific Python version | conda create --name your_desired_name python=3.8 |
+| conda create --name your_desired_name python=3.8 | make a new environment which uses a specific Python version |
 | jupyter notebook --no-browser --port=8080 | Run a jupyter notebook on the server without using the browser on the port 8080 |
 | jupyter notebook password | Define a new password for the jupyter notebook (instead of the token, you will give this password to anyone who will use the jupyter) | 
 | tensorboard --logdir /path/to/save/the/logs --port 8895 | Run Tensorboard on port 8895 and save its logs to the specified directory (logdir) |
