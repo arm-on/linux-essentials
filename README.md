@@ -96,7 +96,7 @@ Table of contents:<br>
 | unzip media.zip | decompress the file "media.zip", and move its contents to the current directory |
 | zip linux.zip /path/to/a/directory/ | make a compressed file containing a directory itself (without the files it contains!!!) |
 | zip -r tutorial.zip /path/to/a/directory/  | make a compressed file containing a directory and its contents | 
-| unzip media.zip /path/to/a/directory/ | decompress the file "media.zip", and move its contents to a desired directory |
+| unzip media.zip -d /path/to/a/directory/ | decompress the file "media.zip", and move its contents to a desired directory |
 | tar -cf myfile.tar porteqal.mp4 sound.mp3 linux.png | "create" a tar "file" (a compressed file with no volume decreasion), given a list of files |
 | tar -xf myfile.tar | decompress (extract) a tar file |
 | tar -vxf myfile.tar | decompress (extract) a tar file while printing out the things inside it |
