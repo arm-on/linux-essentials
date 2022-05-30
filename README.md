@@ -50,8 +50,7 @@ Table of contents:<br>
 | | |
 |-|-|
 | ffmpeg -i whatever.webm -c copy -strict experimental whatever.mp4 | convert webm file to mp4 (Note: "-strict experimental" was added due to the outdated ffmpeg package) |
-| ffmpeg -i input.mp3 -acodec pcm_s16le -ac 1 -ar 16000 out.wav
- | convert 'input.mp3' to a wav file named 'out.wav' (16000 and mono) |
+| ffmpeg -i input.mp3 -acodec pcm_s16le -ac 1 -ar 16000 out.wav | convert 'input.mp3' to a wav file named 'out.wav' (16000 and mono) |
 ## Working with Files
 [Back to top](#)
 | | |
