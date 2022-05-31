@@ -1,27 +1,30 @@
 # Linux Essentials
 
 Table of contents:<br>
-- [General](#general)
--  [Help](#help)
-- [Audio/Video](#audiovideo)
-- [Files](#working-with-files)
-- [Compression](#compression)
-- [Search for Information/Information Extraction from Files](#search-for-information--information-extraction-from-files)
-- [Regex](#regex)
-- [Pipe](#pipe)
-- [Bash](#bash)
-- [Main Directories in Linux](#main-directories-in-linux)
-- [Processes](#processes)
-- [Networking](#networking)
-- [Users](#users)
-- [Permissions](#permissions)
-- [Symbolic Links](#symbolic-links-equivalent-of-shortcuts-in-windows)
-- [Sticky Bit](#sticky-bit)
-- [AWS](#aws)
-- [Anaconda](#anaconda)
-- [GPU](#gpu)
-- [Screen](#screen-do-something-while-im-gone)
-- [Server](#server)
+- [Linux Essentials](#linux-essentials)
+  - [General](#general)
+  - [Help](#help)
+  - [Audio/Video](#audiovideo)
+  - [Working with Files](#working-with-files)
+  - [Compression](#compression)
+  - [Search for Information / Information Extraction from Files](#search-for-information--information-extraction-from-files)
+  - [REGEX](#regex)
+  - [Pipe](#pipe)
+  - [Bash](#bash)
+  - [Main Directories in Linux](#main-directories-in-linux)
+  - [Processes](#processes)
+  - [Networking](#networking)
+    - [How to configure static ip address](#how-to-configure-static-ip-address)
+  - [Users](#users)
+  - [Permissions](#permissions)
+  - [SYMBOLIC LINKS (EQUIVALENT OF SHORTCUTS IN WINDOWS)](#symbolic-links-equivalent-of-shortcuts-in-windows)
+  - [Sticky Bit](#sticky-bit)
+  - [AWS](#aws)
+  - [Anaconda](#anaconda)
+  - [GPU](#gpu)
+    - [How to Install CUDA](#how-to-install-cuda)
+  - [Screen (Do Something while I'm gone)](#screen-do-something-while-im-gone)
+  - [Server](#server)
 ## General
 [Back to top](#)
 | | |
@@ -83,6 +86,7 @@ Table of contents:<br>
 | cp test.txt /path/to/a/directory | copy the file "test.txt" to a directory |
 | cp -r * /path/to/a/directory/ | copy everything inside the current directory (including the folders) to another directory |
 | cp -r /first/dir/ /second/dir/ | copy the first directory into the second directory |
+| rsync -vau --remove-source-files source/ dst/ | Move all files from the "source/" directory to the "dst/" directory (Note: It's sometimes faster than the "cp"/"mv" command) |
 | mv test.txt /path/to/a/directory/ | move the file "test.txt" to another directory |
 | mv *.txt /path/to/a/directory/ | move all of the files whose name end with ".txt" to another directory |
 | mv a.txt b.txt | rename "a.txt" to "b.txt" |
