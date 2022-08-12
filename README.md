@@ -307,6 +307,7 @@ After doing this, restart the network service by running `sudo /etc/init.d/netwo
 | sudo chown arman myfile.txt | change the owner of the file "myfile.txt" to the user "arman" |
 | sudo chgrp mygroup myfile.txt | change the group of the file "myfile.txt" to the group "mygroup" |
 | sudo chown arman myfolder -R | change the owner of the directory named "myfolder" to the user "arman", along with all of its subfolders and files inside it |
+| sudo chmod -R 777 /path/to/your/directory | give every user the permission to do everything with the `/path/to/your/directory` and all its contents (including files and folders) |
 ## SYMBOLIC LINKS (EQUIVALENT OF SHORTCUTS IN WINDOWS)
 [Back to top](#)
 | | |
