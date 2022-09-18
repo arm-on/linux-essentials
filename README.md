@@ -285,6 +285,7 @@ After doing this, restart the network service by running `sudo /etc/init.d/netwo
 | sudo userdel arman | delete the user `arman`, but keep his/her profile - Note: the path `/home/arman/` will remain. |
 | sudo userdel -r arman | delete the user `arman` and his/her profile (files) |
 | sudo groupdel mygroup | delete a group named `mygroup` |
+| sudo adduser arman sudo | add user `arman` to the sudo group |
 | usermod -aG sudo arman | add user `arman` to the sudo group |
 | sudo deluser arman sudo | revoke sudo access from `arman` |
 ## Permissions
