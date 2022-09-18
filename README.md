@@ -288,6 +288,7 @@ After doing this, restart the network service by running `sudo /etc/init.d/netwo
 | sudo adduser arman sudo | add user `arman` to the sudo group |
 | usermod -aG sudo arman | add user `arman` to the sudo group |
 | sudo deluser arman sudo | revoke sudo access from `arman` |
+| `grep -Po '^sudo.+:\K.*$' /etc/group` | get the list of sudoers |
 ## Permissions
 [Back to top](#)
 | | |
