@@ -86,6 +86,7 @@ Table of contents:<br>
 | cp test.txt /path/to/a/directory | copy the file "test.txt" to a directory |
 | cp -r * /path/to/a/directory/ | copy everything inside the current directory (including the folders) to another directory |
 | cp -r /first/dir/ /second/dir/ | copy the first directory into the second directory |
+| cp -a /source/. /dest/ | copy everything from the "source" to the "dest" folder |
 | rsync -vau --remove-source-files source/ dst/ | Move all files from the "source/" directory to the "dst/" directory (Note: It's sometimes faster than the "cp"/"mv" command) |
 | mv test.txt /path/to/a/directory/ | move the file "test.txt" to another directory |
 | mv *.txt /path/to/a/directory/ | move all of the files whose name end with ".txt" to another directory |
