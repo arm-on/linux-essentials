@@ -346,7 +346,7 @@ Note: To install Anaconda for all linux users, do the following steps:
 3. Run `sudo apt-get update`
 4. Execute `bash Anaconda[...].sh` to run the installation file.
 5. Accept the license (type yes)
-6. For the install location, choose `opt/anaconda3`
+6. For the install location, choose `/opt/anaconda3`
 7. It asks "Do you wish the installer to initialize blah blah blah"? Say "yes". (The installation is finished).
 8. Run `exit` to again be a normal user.
 9. Now your user does not recognize conda (For instance if you type `conda -V`, it will say `command not found`).
