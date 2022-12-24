@@ -58,7 +58,7 @@ Table of contents:<br>
 [Back to top](#)
 | | |
 |-|-|
-| ```sudo du -aBm / 2>/dev/null | sort -nr | head -n 10``` | list the biggest files/directories in terms of volume (top 10) |
+| sudo du -aBm / 2>/dev/null \| sort -nr \| head -n 10 | list the biggest files/directories in terms of volume (top 10) |
 |cd /the/path/of/a/folder/ | change directory |
 | cd ~ | change directory to the home dir |
 | cd / | change directory to the root dir |
