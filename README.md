@@ -59,8 +59,8 @@ Table of contents:<br>
 | | |
 |-|-|
 | sudo du -aBm / 2>/dev/null \| sort -nr \| head -n 10 | list the biggest files/directories in terms of volume (top 10) |
-| `du -hsx * | sort -rh | head -10` | list the biggest files/directories in terms of volume (top 10) |
-| `find . -type f -printf '%s %p\n'| sort -nr | head -10 | numfmt --field=1 --to=iec` | list the largest files in terms of volume (top 10) |
+| ```du -hsx * | sort -rh | head -10``` | list the biggest files/directories in terms of volume (top 10) |
+| ```find . -type f -printf '%s %p\n'| sort -nr | head -10 | numfmt --field=1 --to=iec``` | list the largest files in terms of volume (top 10) |
 |cd /the/path/of/a/folder/ | change directory |
 | cd ~ | change directory to the home dir |
 | cd / | change directory to the root dir |
