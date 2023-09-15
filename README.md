@@ -40,6 +40,7 @@ Table of contents:<br>
 | rm -rf ~/.local/share/Trash/* | Empty the trash |
 | lsof / \| grep deleted | List the files that should have been deleted, but are not deleted until now! |
 | lsof\|grep deleted\|awk '{print $2}'\|xargs kill -9 | Get rid of the deleted files for which a job/process is still open, preventing the file from being deleted |
+| pip cache purge | clear the cache for pip |
 ## Help
 [Back to top](#)
 | | |
