@@ -422,4 +422,3 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 | | |
 |-|-|
 | apt install ubuntu-desktop | install a desktop on an Ubuntu server |
-| test | test |
