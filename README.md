@@ -25,6 +25,7 @@ Table of contents:<br>
     - [How to Install CUDA](#how-to-install-cuda)
   - [Screen (Do Something while I'm gone)](#screen-do-something-while-im-gone)
   - [Server](#server)
+  - [Common Problems](#common-problems)
 ## General
 [Back to top](#)
 | | |
@@ -423,3 +424,17 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 | | |
 |-|-|
 | apt install ubuntu-desktop | install a desktop on an Ubuntu server |
+
+## Common Problems
+[Back to top](#)
+
+### `sudo apt-get update` fails
+
+This is usually due to a corrupted `sources.list.d` file.
+
+```
+sudo mv /etc/apt/sources.list{,.bk}
+sudo mkdir /etc/apt/sources.list.d
+sudo cp /usr/share/doc/apt/examples/sources.list /etc/apt/sources.list
+sudo apt-get update
+```
