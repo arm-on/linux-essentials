@@ -419,6 +419,8 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 | screen -S arman | Start a screen with name `arman`. You can detach from the screen (get out of it) by using `ctrl+a` and then pressing `d` |
 | screen -r arman | Resume a screen named `arman` |
 | screen killall | Kill all screens |
+| screen -ls | List all running screens |
+| screen -r -d 29284 | Resume a screen with ID 29284 |
 ## Server
 [Back to top](#)
 | | |
