@@ -418,6 +418,7 @@ driver   : xserver-xorg-video-nouveau - distro free builtin
 - Run `nvcc -V` to get the version of the cuDNN! (Now it should work!)
 
 ### What if `nvidia-smi` hangs with no output?
+
 Uninstall both NVIDIA and CUDA using the built-in uninstallation scripts and install another driver.
 
 ## Screen (Do Something while I'm gone)
