@@ -371,6 +371,7 @@ Note: To install Anaconda for all linux users, do the following steps:
 | pgrep nvidia-smi | Get all `nvidia-smi` processes by ID |
 | sudo /usr/local/cuda-11.4/bin/cuda-uninstaller | Uninstall CUDA using its own uninstallation script |
 | sudo /usr/bin/nvidia-uninstall | Uninstall NVIDIA using its own uninstallation script |
+| ubuntu-drivers devices | Get the available NVIDIA drivers along with recommendations |
 
 ### How to Install CUDA
 - `sudo apt-get update`
