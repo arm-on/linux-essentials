@@ -447,9 +447,10 @@ Uninstall both NVIDIA and CUDA using the built-in uninstallation scripts and ins
 1. Run `docker ps` to get its ID
 2. Use the `docker commit` command to create a new image. Replace <container_id> with the ID or name of your running container and <image_name> with the desired name for your new image. Run `docker commit <container_id> <image_name>:<tag>` (Choose an image name and a tag, .e.g, `docker commit 00784f83a867 torch112cu116:latest`)
 3. Run `docker images` to make sure the image has been created.
-4. Run `docker login` to log into the docker hub.
-5. Docker Hub requires images to be tagged with your Docker Hub username and repository name. To do this, run `docker tag <image_name>:<tag> <dockerhub_username>/<repository_name>:<tag>` (e.g., `docker tag torch112cu116:latest armanmalekzadeh/gpulinux:latest`).
-6. Push the tagged image to Docker Hub by running `docker push armanmalekzadeh/gpulinux:latest`.
+4. (Optional) Save the Image: If you want to back up or transfer the image to another system, you can save it as a tar file by running `docker save -o <path_to_file>.tar <image_name>:<tag>` (e.g., `docker save -o my_new_image.tar my_new_image:latest`). Then, you can load it using `docker load -i <path_to_file>.tar`.
+5. Run `docker login` to log into the docker hub.
+6. Docker Hub requires images to be tagged with your Docker Hub username and repository name. To do this, run `docker tag <image_name>:<tag> <dockerhub_username>/<repository_name>:<tag>` (e.g., `docker tag torch112cu116:latest armanmalekzadeh/gpulinux:latest`).
+7. Push the tagged image to Docker Hub by running `docker push armanmalekzadeh/gpulinux:latest`.
 
 ## Common Problems
 [Back to top](#)
