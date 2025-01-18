@@ -444,6 +444,20 @@ Uninstall both NVIDIA and CUDA using the built-in uninstallation scripts and ins
 | docker ps | List all running containers with their ID and name |
 | docker stop <container_id> | Stop a container with a given ID  |
 | docker rm <container_id> | Remove a container with a given ID |
+| docker exec -it <container_id_or_name> /bin/bash | attach to an existing container (run code on an existing container) |
+
+### How to install the docker on Ubuntu Linux
+1. Run `sudo apt update`.
+2. Install the docker using `sudo apt install -y docker.io`.
+3. Start the docker: `sudo systemctl start docker`.
+4. Enable the docker: `sudo systemctl enable docker`.
+5. Verify Installation: `docker --version`.
+
+### How to get a docker image from docker hub and use it
+1. Download the image from docker hub: `docker pull <dockerhub_username>/<repository_name>:<tag>`.
+2. To run the image interactively and get access to the bash shell, use the `-it` flags: `docker run -it <dockerhub_username>/<repository_name>:<tag> /bin/bash`.
+3. When the container starts, you’ll be dropped into its bash shell. You can now run any commands interactively inside the container.
+4. When you're done, type `exit` to  leave the container. This will also stop the container unless you run it with `--rm` to remove it automatically.
 
 ### How to push your own docker container to docker hub
 1. Run `docker ps` to get its ID
