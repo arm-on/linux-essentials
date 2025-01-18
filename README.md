@@ -25,6 +25,7 @@ Table of contents:<br>
     - [How to Install CUDA](#how-to-install-cuda)
   - [Screen (Do Something while I'm gone)](#screen-do-something-while-im-gone)
   - [Server](#server)
+  - [Docker](#docker)
   - [Common Problems](#common-problems)
 ## General
 [Back to top](#)
@@ -435,6 +436,12 @@ Uninstall both NVIDIA and CUDA using the built-in uninstallation scripts and ins
 | | |
 |-|-|
 | apt install ubuntu-desktop | install a desktop on an Ubuntu server |
+
+## Docker
+[Back to top](#)
+| | |
+|-|-|
+| docker ps | List all running containers with their ID and name |
 
 ## Common Problems
 [Back to top](#)
