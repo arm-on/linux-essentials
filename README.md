@@ -442,6 +442,8 @@ Uninstall both NVIDIA and CUDA using the built-in uninstallation scripts and ins
 | | |
 |-|-|
 | docker ps | List all running containers with their ID and name |
+| docker stop <container_id> | Stop a container with a given ID  |
+| docker rm <container_id> | Remove a container with a given ID |
 
 ### How to push your own docker container to docker hub
 1. Run `docker ps` to get its ID
