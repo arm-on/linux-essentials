@@ -442,9 +442,15 @@ Uninstall both NVIDIA and CUDA using the built-in uninstallation scripts and ins
 | | |
 |-|-|
 | docker ps | List all running containers with their ID and name |
+| docker ps -a | List all containers with their ID and name |
 | docker stop <container_id> | Stop a container with a given ID  |
 | docker rm <container_id> | Remove a container with a given ID |
 | docker exec -it <container_id_or_name> /bin/bash | attach to an existing container (run code on an existing container) |
+| docker run -d <image_name>:<tag> | Run a Container in Detached Mode |
+| docker stop <container_id_or_name> | Stop a Running Container |
+| docker start <container_id_or_name> | Start a Stopped Container |
+| docker exec -it <container_id_or_name> <command> | Execute a Command in a Running Container |
+| docker logs <container_id_or_name> | View Container Logs |
 
 ### How to install the docker on Ubuntu Linux
 1. Run `sudo apt update`.
