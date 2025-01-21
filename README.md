@@ -451,6 +451,8 @@ Uninstall both NVIDIA and CUDA using the built-in uninstallation scripts and ins
 | docker start <container_id_or_name> | Start a Stopped Container |
 | docker exec -it <container_id_or_name> <command> | Execute a Command in a Running Container |
 | docker logs <container_id_or_name> | View Container Logs |
+| docker system df | Get a summary of all Docker disk usage |
+| docker system df --verbose | Get a detailed report on all Docker disk usage |
 
 ### How to install the docker on Ubuntu Linux
 1. Run `sudo apt update`.
