@@ -447,6 +447,7 @@ Uninstall both NVIDIA and CUDA using the built-in uninstallation scripts and ins
 | docker rm <container_id> | Remove a container with a given ID |
 | docker exec -it <container_id_or_name> /bin/bash | attach to an existing container (run code on an existing container) |
 | docker run -d <image_name>:<tag> | Run a Container in Detached Mode |
+| docker run -d -p 8889:8889 armanmalekzadeh/gpulinux jupyter notebook --ip=0.0.0.0 --no-browser --port=8889 --allow-root | Run a Docker Container with Jupyter Notebook accessible on port 8889. (maps port 8889 from the container to the host, and starts a Jupyter Notebook server that listens on all network interfaces without opening a browser, using port 8889 with root access enabled.) |
 | docker stop <container_id_or_name> | Stop a Running Container |
 | docker start <container_id_or_name> | Start a Stopped Container |
 | docker exec -it <container_id_or_name> <command> | Execute a Command in a Running Container |
