@@ -351,7 +351,8 @@ After doing this, restart the network service by running `sudo /etc/init.d/netwo
 | tensorboard --logdir /path/to/save/the/logs --port 8895 | Run Tensorboard on port 8895 and save its logs to the specified directory (logdir) |
 | ssh -L 8080:localhost:8888 <REMOTE_USER>@<REMOTE_HOST> | Use a jupyter which is running on port `8888` (on a remote server) on your local port `8080` (by connecting to the `<REMOTE_USER>@<REMOTE_HOST>` using SSH) - This is called "port forwarding" | 
 
-Note: To install Anaconda for all linux users, do the following steps:
+### To install Anaconda for all linux users, do the following steps:
+
 1. Download Anaconda .sh installation file from its website.
 2. Run `sudo -i` to be the root user.
 3. Run `sudo apt-get update`
@@ -364,6 +365,27 @@ Note: To install Anaconda for all linux users, do the following steps:
 10. Run `sudo nano /etc/environment`.
 11. At the beginning of the `PATH` variable, after the `"` character, add `/opt/anaconda3/bin:`, and save the file using `CTRL+O`.
 12. Log out from your own user and do the SSH again. Now if you run `conda -V`, the user will recognize it.
+
+### Add Users to JupyterHub
+1. First, locate the file named `jupyterhub_config.py` using this command:
+   ```
+   ps aux | grep jupyterhub
+   ```
+   The result will contain something like this:
+   ```
+   root     1215751  0.4  0.0 262044 98504 ?        Ssl  10:30   0:01 /opt/py-venvs/py3.11/bin/python3 /opt/py-venvs/py3.11/bin/jupyterhub -f /opt/py-venvs/py3.11/etc/jupyterhub/jupyterhub_config.py
+   ```
+   Obviously, the path to `jupyterhub_config.py` is there.
+2. Inside that `jupyterhub.config.py` file, there is a line similar to the following:
+   ```
+   c.Authenticator.allowed_users = {'arman', 'another_user', 'blah_blah_user'}
+   ```
+   Note that the file is very long. So, be patient (or search inside it). Add the desired user to the `allowed_users` variable.
+3. Finally, you should restart JupyterHub using this command:
+   ```
+   sudo systemctl restart jupyterhub
+   ```
+
 ## GPU
 [Back to top](#)
 | | |
