@@ -283,6 +283,7 @@ After doing this, restart the network service by running `sudo /etc/init.d/netwo
 | sudo cat /etc/shadow | the file `/etc/shadow` contains the hashed passwords for all users |
 | sudo command | execute the command using the permission level of the `root` user |
 | su arman | change the user to `arman` in order to execute commands on his/her behalf (this will ask for the password of the user `arman`) |
+| sudo su - arman | change the user to `arman` in order to execute commands on his/her behalf (without asking for their permission). This only works if you are a sudoer. |
 | sudo adduser arman | create a new user named `arman` - Note: this will ask for a password for the new user, and some other info (such as phone number!) |
 | sudo addgroup mynewgroup | create a new group named `mynewgroup` |
 | sudo passwd | change the password of the current user |
