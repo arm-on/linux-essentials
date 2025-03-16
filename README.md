@@ -472,9 +472,9 @@ Uninstall both NVIDIA and CUDA using the built-in uninstallation scripts and ins
 | docker exec -it <container_id_or_name> /bin/bash | attach to an existing container to run code interactively |
 | docker attach <container_id_or_name> | Attach to a running container |
 | `CTRL+P` followed by `CTRL+Q` | Detach from a running container |
-| docker run -d <image_name>:<tag> | Run a Container in Detached Mode |
-| docker run -d -p 8889:8889 armanmalekzadeh/gpulinux jupyter notebook --ip=0.0.0.0 --no-browser --port=8889 --allow-root | Run a Docker Container with Jupyter Notebook accessible on port 8889. (maps port 8889 from the container to the host, and starts a Jupyter Notebook server that listens on all network interfaces without opening a browser, using port 8889 with root access enabled.) |
-| docker run -d -p 8889:8889 -v ~/path/on/host:/path/in/container armanmalekzadeh/gpulinux jupyter notebook --ip=0.0.0.0 --no-browser --port=8889 --allow-root | Run a Docker container with Jupyter Notebook accessible on port 8889 and a host directory mounted. (maps port 8889 from the container to the host, mounts a host directory into the container for file access, and starts a Jupyter Notebook server that listens on all network interfaces without opening a browser, using port 8889 with root access enabled.) |
+| `docker run -d <image_name>:<tag>` | Run a Container in Detached Mode |
+| `docker run --gpus all -it -v ~/path/to/host_folder:/out_path
+ -p 8002:8889 --entrypoint /bin/bash lorenzopapa5/cuda11.6-python3-pytorch1.12.0:latest` | Run a docker named `cuda11.6-python3-pytorch1.12.0:latest` uploaded by a user called `lorenzopapa5` (available on Dockerhub) while giving it access to all gpus available on the host machine. This command also makes a folder called `out_path` in the docker files and maps it to the real path `/path/to/host_folder` on the host machine. Moreover, it maps the docker port `8889` to the real port `8002` on the host machine. |
 | docker stop <container_id_or_name> | Stop a Running Container |
 | docker start <container_id_or_name> | Start a Stopped Container |
 | docker exec -it <container_id_or_name> <command> | Execute a Command in a Running Container |
