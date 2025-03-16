@@ -473,8 +473,7 @@ Uninstall both NVIDIA and CUDA using the built-in uninstallation scripts and ins
 | docker attach <container_id_or_name> | Attach to a running container |
 | `CTRL+P` followed by `CTRL+Q` | Detach from a running container |
 | `docker run -d <image_name>:<tag>` | Run a Container in Detached Mode |
-| `docker run --gpus all -it -v ~/path/to/host_folder:/out_path
- -p 8002:8889 --entrypoint /bin/bash lorenzopapa5/cuda11.6-python3-pytorch1.12.0:latest` | Run a docker named `cuda11.6-python3-pytorch1.12.0:latest` uploaded by a user called `lorenzopapa5` (available on Dockerhub) while giving it access to all gpus available on the host machine. This command also makes a folder called `out_path` in the docker files and maps it to the real path `/path/to/host_folder` on the host machine. Moreover, it maps the docker port `8889` to the real port `8002` on the host machine. |
+| `docker run --gpus all -it -v ~/path/to/host_folder:/out_path -p 8002:8889 --entrypoint /bin/bash lorenzopapa5/cuda11.6-python3-pytorch1.12.0:latest` | Run a docker named `cuda11.6-python3-pytorch1.12.0:latest` uploaded by a user called `lorenzopapa5` (available on Dockerhub) while giving it access to all gpus available on the host machine. This command also makes a folder called `out_path` in the docker files and maps it to the real path `/path/to/host_folder` on the host machine. Moreover, it maps the docker port `8889` to the real port `8002` on the host machine. |
 | docker stop <container_id_or_name> | Stop a Running Container |
 | docker start <container_id_or_name> | Start a Stopped Container |
 | docker exec -it <container_id_or_name> <command> | Execute a Command in a Running Container |
