@@ -469,7 +469,9 @@ Uninstall both NVIDIA and CUDA using the built-in uninstallation scripts and ins
 | docker ps -a | List all containers with their ID and name |
 | docker stop <container_id> | Stop a container with a given ID  |
 | docker rm <container_id> | Remove a container with a given ID |
-| docker exec -it <container_id_or_name> /bin/bash | attach to an existing container (run code on an existing container). Note: To detach while letting it continue running, press `CTRL+P` followed by `CTRL+Q` |
+| docker exec -it <container_id_or_name> /bin/bash | attach to an existing container to run code interactively |
+| docker attach <container_id_or_name> | Attach to a running container |
+| `CTRL+P` followed by `CTRL+Q` | Detach from a running container |
 | docker run -d <image_name>:<tag> | Run a Container in Detached Mode |
 | docker run -d -p 8889:8889 armanmalekzadeh/gpulinux jupyter notebook --ip=0.0.0.0 --no-browser --port=8889 --allow-root | Run a Docker Container with Jupyter Notebook accessible on port 8889. (maps port 8889 from the container to the host, and starts a Jupyter Notebook server that listens on all network interfaces without opening a browser, using port 8889 with root access enabled.) |
 | docker run -d -p 8889:8889 -v ~/path/on/host:/path/in/container armanmalekzadeh/gpulinux jupyter notebook --ip=0.0.0.0 --no-browser --port=8889 --allow-root | Run a Docker container with Jupyter Notebook accessible on port 8889 and a host directory mounted. (maps port 8889 from the container to the host, mounts a host directory into the container for file access, and starts a Jupyter Notebook server that listens on all network interfaces without opening a browser, using port 8889 with root access enabled.) |
