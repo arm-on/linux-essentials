@@ -213,6 +213,22 @@ Table of contents:<br>
 | dig arman.ir | reveal some information about the website "arman.ir" including the IP addresses it has - Actually, this command sends a request to the nameservers of the website |
 | ping 192.168.200.567 | send requests to the given ip address to see if we can have a connection with the device (pc) having that ip address - Note: in the result of this command, you will see "TTL". If the value of "ttl" is more than 100, the pc has a windows installed on it. Otherwise, the OS is linux. - Note2: You are not required to write an ip address. Instead, you can write a domain, such as `ping arman.ir` - Note3: This command is used to see if the connection between two clients or a client and a server has been established |
 
+### The best way to configure DNS
+
+1. Run `sudo nano /etc/netplan/00-installer-config.yaml` to edit this file. The file contains something like this:
+   
+   ```
+      nameservers:
+        addresses: [8.8.8.8]
+   ```
+   Add your preferred DNS in the addresses variable. It will become something like this:
+
+   ```
+      nameservers:
+        addresses: [123.123.123.123, 234.234.234.234]
+   ```
+2. Save the file and get back to the terminal. Then run `sudo netplan apply`.
+
 ### How to configure static ip address
 1. Identify the name of the ethernet interface using `ip link` (or `ip a`, `ip addr`). The output will be something like this:
 ```
