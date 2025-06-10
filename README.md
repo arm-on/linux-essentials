@@ -314,6 +314,37 @@ After doing this, restart the network service by running `sudo /etc/init.d/netwo
 | usermod -aG sudo arman | add user `arman` to the sudo group |
 | sudo deluser arman sudo | revoke sudo access from `arman` |
 | `grep -Po '^sudo.+:\K.*$' /etc/group` | get the list of sudoers |
+
+### Passwordless Login using SSH Keys
+
+Everytime you try logging into your server? Are you tired of it? If yes, do the following steps:
+
+1. Run `ssh-keygen -t rsa -b 4096 -C "your_email@gmail.com"` in the terminal. This will create a ssh key-pair. You will be prompted with something like this:
+   ```
+   Generating public/private rsa key pair.
+   Enter file in which to save the key (/Users/armanmalekzadeh/.ssh/id_rsa):
+   ```
+Consider a new path for the key. For instance, type `/Users/armanmalekzadeh/.ssh/id_rsa_new` and hit enter. You will be asked for a passphrase. Choose something appropriate if you want. Finally, you will be shown something like this:
+  ```
+  Your identification has been saved in /Users/armanmalekzadeh/.ssh/id_rsa_new
+  Your public key has been saved in /Users/armanmalekzadeh/.ssh/id_rsa_new.pub
+  The key fingerprint is:
+  SHA256:blahblahblah your_email@gmail.com
+  The key's randomart image is:
+  +---[RSA 4096]----+
+  | blah blah blah  |
+  +----[SHA256]-----+
+  ```
+
+2. Run `ssh-copy-id -i .ssh/id_rsa_test.pub your_user_name@your_server` in the terminal. This will make a copy of the public key on your remote server.
+3. Run `nano ~/.ssh/config` to edit `~/.ssh/config`. Add something like this at the end of the file:
+   ```
+   Host 123.123.123.123 (replace with your_servers_ip)
+   HostName 123.123.123.123 (replace with your_servers_ip)
+   User your_user_name
+   IdentityFile ~/.ssh/id_rsa_new
+   ```
+
 ## Permissions
 [Back to top](#)
 | | |
