@@ -200,6 +200,7 @@ Table of contents:<br>
 | free | show the ram (memory), how much of it is used, how much is free, and the same things for the swap (which is used to accelerate the speed of the system) |
 | free -tb | show the ram (memory), how much (how many bytes) of it is used, how much is free, and the same things for the swap (which is used to accelerate the speed of the system) |
 | free -tm | show the ram (memory), how much (how many megabytes) of it is used, how much is free, and the same things for the swap (which is used to accelerate the speed of the system) |
+| `sudo kill -9 $(sudo lsof -t -i :8010)` | kill the process which is using the port `8010` |
 ## Networking
 [Back to top](#)
 | | |
