@@ -337,7 +337,7 @@ Consider a new path for the key. For instance, type `/Users/armanmalekzadeh/.ssh
   +----[SHA256]-----+
   ```
 
-2. Run `ssh-copy-id -i .ssh/id_rsa_test.pub your_user_name@your_server` in the terminal. This will make a copy of the public key on your remote server.
+2. Run `ssh-copy-id -i .ssh/id_rsa_test.pub your_user_name@your_server` in the terminal. This will make a copy of the public key on your remote server. If for any reason this command doesn't work, you'll have to copy the content of the `.pub` file manually into a new line inside the file `~/.ssh/authorized_keys` on your remote server.
 3. Run `nano ~/.ssh/config` to edit `~/.ssh/config`. Add something like this at the end of the file:
    ```
    Host 123.123.123.123 (replace with your_servers_ip)
