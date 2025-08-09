@@ -496,13 +496,16 @@ Uninstall both NVIDIA and CUDA using the built-in uninstallation scripts and ins
 
 ## Screen (Do Something while I'm gone)
 [Back to top](#)
-| | |
+
+| Command | Description |
 |-|-|
-| screen -S arman | Start a screen with name `arman`. You can detach from the screen (get out of it) by using `ctrl+a` and then pressing `d` |
-| screen -r arman | Resume a screen named `arman` |
-| screen killall | Kill all screens |
-| screen -ls | List all running screens |
-| screen -r -d 29284 | Resume a screen with ID 29284 |
+| `screen -S arman` | Start a screen with name `arman`. You can detach from the screen (get out of it) by using `ctrl+a` and then pressing `d` |
+| `screen -r arman` | Resume a screen named `arman` |
+| `screen killall` | Kill all screens |
+| `screen -ls` | List all running screens |
+| `screen -r -d 29284` | Resume a screen with ID 29284 |
+| `screen -dmS diary bash -c 'source virtualenv/diary/3.11/bin/activate; cd diary; python main.py'` | Start a screen named `diary` in detached mode and run 3 commands inside it |
+
 ## Server
 [Back to top](#)
 | | |
