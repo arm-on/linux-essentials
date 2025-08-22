@@ -520,8 +520,9 @@ Uninstall both NVIDIA and CUDA using the built-in uninstallation scripts and ins
 | docker ps -a | List all containers with their ID and name |
 | docker stop <container_id> | Stop a container with a given ID  |
 | docker rm <container_id> | Remove a container with a given ID |
-| docker exec -it <container_id_or_name> /bin/bash | attach to an existing container to run code interactively |
+| docker run --rm -it arman/web:v2 pip list | create and run a temporary container from the arman/web:v2 image, run pip list inside it, then remove the container after execution |
 | docker attach <container_id_or_name> | Attach to a running container |
+| `docker run --rm -it <container_ pip list` | Run |
 | `CTRL+P` followed by `CTRL+Q` | Detach from a running container |
 | `docker run -d <image_name>:<tag>` | Run a Container in Detached Mode |
 | `docker run --gpus all -it -v ~/path/to/host_folder:/out_path -p 8002:8889 --entrypoint /bin/bash lorenzopapa5/cuda11.6-python3-pytorch1.12.0:latest` | Run a docker named `cuda11.6-python3-pytorch1.12.0:latest` uploaded by a user called `lorenzopapa5` (available on Dockerhub) while giving it access to all gpus available on the host machine. This command also makes a folder called `out_path` in the docker files and maps it to the real path `/path/to/host_folder` on the host machine. Moreover, it maps the docker port `8889` to the real port `8002` on the host machine. |
