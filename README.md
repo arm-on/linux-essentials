@@ -201,6 +201,8 @@ Table of contents:<br>
 | free -tb | show the ram (memory), how much (how many bytes) of it is used, how much is free, and the same things for the swap (which is used to accelerate the speed of the system) |
 | free -tm | show the ram (memory), how much (how many megabytes) of it is used, how much is free, and the same things for the swap (which is used to accelerate the speed of the system) |
 | `sudo kill -9 $(sudo lsof -t -i :8010)` | kill the process which is using the port `8010` |
+| `for port in {8010..8019} {8030..8034}; do pid=$(lsof -ti:$port); [ ! -z "$pid" ] && kill -9 $pid && echo "Killed process $pid on port $port"; done` | kill all processes using ports 8010 to 8019 or 8030 to 8034 |
+
 ## Networking
 [Back to top](#)
 | | |
